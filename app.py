@@ -24,7 +24,7 @@ if st.button("Scan for Threats", type="primary"):
         with st.spinner("Analyzing linguistic patterns..."):
             try:
                 # Send the text to your local FastAPI server
-                response = requests.post("http://127.0.0.1:8000/predict", json={"text": email_text})
+                response = requests.post("https://phishvector.onrender.com/predict", json={"text": email_text})
                 
                 if response.status_code == 200:
                     result = response.json()
